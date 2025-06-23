@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engenheiro de Compostos - Dominando a Química dos Materiais</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'steel-blue': '#4682B4',
+                        'burnt-orange': '#CC5500',
+                        'dark-green': '#2F4F2F',
+                        'industrial-gray': '#708090',
+                        'action-yellow': '#FFD700'
+                    }
+                }
+            }
+        }
+        
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans leading-relaxed">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-steel-blue to-industrial-gray text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <h1 class="text-xl md:text-2xl font-bold mb-4 text-center">
+                Engenheiro de Compostos<br>
+                <span class="text-action-yellow text-lg md:text-xl">Dominando a Química dos Materiais</span>
+            </h1>
+            <nav class="flex flex-wrap justify-center gap-2 md:gap-4">
+                <a href="#introducao" class="px-3 py-2 bg-white/20 rounded-lg hover:bg-action-yellow hover:text-gray-900 transition-all text-sm md:text-base">Introdução</a>
+                <a href="#historico" class="px-3 py-2 bg-white/20 rounded-lg hover:bg-action-yellow hover:text-gray-900 transition-all text-sm md:text-base">Contexto Histórico</a>
+                <a href="#aplicacoes" class="px-3 py-2 bg-white/20 rounded-lg hover:bg-action-yellow hover:text-gray-900 transition-all text-sm md:text-base">Aplicações</a>
+                <a href="#jogo" class="px-3 py-2 bg-action-yellow text-gray-900 rounded-lg hover:bg-yellow-400 transition-all text-sm md:text-base font-semibold">Jogo Interativo</a>
+                <a href="#experimentos" class="px-3 py-2 bg-white/20 rounded-lg hover:bg-action-yellow hover:text-gray-900 transition-all text-sm md:text-base">Experimentos</a>
+                <a href="#exercicios" class="px-3 py-2 bg-white/20 rounded-lg hover:bg-action-yellow hover:text-gray-900 transition-all text-sm md:text-base">Exercícios</a>
+                <a href="#conexoes" class="px-3 py-2 bg-white/20 rounded-lg hover:bg-action-yellow hover:text-gray-900 transition-all text-sm md:text-base">Conexões</a>
+                <a href="#curiosidades" class="px-3 py-2 bg-white/20 rounded-lg hover:bg-action-yellow hover:text-gray-900 transition-all text-sm md:text-base">Curiosidades</a>
+                <a href="#contato" class="px-3 py-2 bg-white/20 rounded-lg hover:bg-action-yellow hover:text-gray-900 transition-all text-sm md:text-base">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Introdução -->
+        <section id="introducao" class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-steel-blue mb-8 text-center">Introdução Conceitual</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-semibold text-burnt-orange mb-4">O que são Materiais?</h3>
+                    <p class="mb-4">Os materiais são substâncias ou combinações de substâncias das quais objetos são feitos. Eles são classificados em quatro categorias principais:</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center"><span class="w-3 h-3 bg-steel-blue rounded-full mr-3"></span><strong>Metais:</strong> Condutores, maleáveis e dúcteis</li>
+                        <li class="flex items-center"><span class="w-3 h-3 bg-burnt-orange rounded-full mr-3"></span><strong>Cerâmicas:</strong> Resistentes ao calor e à corrosão</li>
+                        <li class="flex items-center"><span class="w-3 h-3 bg-dark-green rounded-full mr-3"></span><strong>Polímeros:</strong> Leves e versáteis</li>
+                        <li class="flex items-center"><span class="w-3 h-3 bg-action-yellow rounded-full mr-3"></span><strong>Compósitos:</strong> Combinam propriedades de diferentes materiais</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-semibold text-burnt-orange mb-4">Propriedades Fundamentais</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="text-center p-3 bg-white dark:bg-gray-700 rounded-lg">
+                            <div class="text-2xl mb-2">⚡</div>
+                            <div class="font-semibold">Condutividade</div>
+                        </div>
+                        <div class="text-center p-3 bg-white dark:bg-gray-700 rounded-lg">
+                            <div class="text-2xl mb-2">🔥</div>
+                            <div class="font-semibold">Resistência Térmica</div>
+                        </div>
+                        <div class="text-center p-3 bg-white dark:bg-gray-700 rounded-lg">
+                            <div class="text-2xl mb-2">💪</div>
+                            <div class="font-semibold">Dureza</div>
+                        </div>
+                        <div class="text-center p-3 bg-white dark:bg-gray-700 rounded-lg">
+                            <div class="text-2xl mb-2">🔄</div>
+                            <div class="font-semibold">Elasticidade</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gráfico Comparativo -->
+            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+                <h3 class="text-xl font-semibold text-burnt-orange mb-4 text-center">Comparação de Propriedades dos Materiais</h3>
+                <canvas id="materialsChart" class="w-full h-64"></canvas>
+            </div>
+        </section>
+
+        <!-- Contexto Histórico -->
+        <section id="historico" class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-steel-blue mb-8 text-center">Contexto Histórico</h2>
+            
+            <div class="relative">
+                <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-industrial-gray to-steel-blue"></div>
+                
+                <div class="space-y-8">
+                    <div class="relative pl-12 md:pl-0 md:ml-8 lg:ml-16">
+                        <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-industrial-gray rounded-full -ml-4"></div>
+                        <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-lg md:w-1/2 md:ml-auto">
+                            <h3 class="text-xl font-semibold text-burnt-orange mb-2">Idade da Pedra (3,4 milhões a.C.)</h3>
+                            <p>Primeiros materiais utilizados: pedra, madeira, ossos e fibras naturais.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative pl-12 md:pl-0 md:mr-8 lg:mr-16">
+                        <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-burnt-orange rounded-full -ml-4"></div>
+                        <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-lg md:w-1/2">
+                            <h3 class="text-xl font-semibold text-burnt-orange mb-2">Idade dos Metais (3000 a.C.)</h3>
+                            <p>Descoberta e uso do bronze e ferro. Revolução na fabricação de ferramentas e armas.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative pl-12 md:pl-0 md:ml-8 lg:ml-16">
+                        <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-dark-green rounded-full -ml-4"></div>
+                        <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-lg md:w-1/2 md:ml-auto">
+                            <h3 class="text-xl font-semibold text-burnt-orange mb-2">Revolução Industrial (1760-1840)</h3>
+                            <p>Desenvolvimento do aço moderno e processos de produção em massa.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative pl-12 md:pl-0 md:mr-8 lg:mr-16">
+                        <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-action-yellow rounded-full -ml-4"></div>
+                        <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-lg md:w-1/2">
+                            <h3 class="text-xl font-semibold text-burnt-orange mb-2">Era dos Polímeros (1907)</h3>
+                            <p>Criação do primeiro plástico sintético (Baquelite) por Leo Baekeland.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative pl-12 md:pl-0 md:ml-8 lg:ml-16">
+                        <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-steel-blue rounded-full -ml-4"></div>
+                        <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-lg md:w-1/2 md:ml-auto">
+                            <h3 class="text-xl font-semibold text-burnt-orange mb-2">Materiais Avançados (2000+)</h3>
+                            <p>Nanotecnologia, grafeno, materiais inteligentes e biomateriais revolucionários.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aplicações Práticas -->
+        <section id="aplicacoes" class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-steel-blue mb-8 text-center">Aplicações Práticas</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-gradient-to-br from-steel-blue to-blue-600 text-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform">
+                    <div class="text-4xl mb-4 text-center">🚗</div>
+                    <h3 class="text-xl font-semibold mb-2">Indústria Automotiva</h3>
+                    <p class="text-sm">Aço para carroceria, plásticos de engenharia para componentes internos, fibra de carbono para esportivos.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-burnt-orange to-orange-600 text-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform">
+                    <div class="text-4xl mb-4 text-center">💻</div>
+                    <h3 class="text-xl font-semibold mb-2">Tecnologia</h3>
+                    <p class="text-sm">Silício para semicondutores, cobre para condutores elétricos, materiais piezoelétricos.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-dark-green to-green-600 text-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform">
+                    <div class="text-4xl mb-4 text-center">🏗️</div>
+                    <h3 class="text-xl font-semibold mb-2">Construção Civil</h3>
+                    <p class="text-sm">Cerâmicas para revestimentos, concreto armado, vidros especiais para isolamento.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-action-yellow to-yellow-500 text-gray-900 p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform">
+                    <div class="text-4xl mb-4 text-center">🏥</div>
+                    <h3 class="text-xl font-semibold mb-2">Medicina</h3>
+                    <p class="text-sm">Biomateriais para implantes, polímeros biocompatíveis, cerâmicas para próteses dentárias.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Jogo Interativo -->
+        <section id="jogo" class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-steel-blue mb-8 text-center">🎮 Missão: Escolha o Material Certo</h2>
+            
+            <div class="bg-gradient-to-r from-industrial-gray to-steel-blue text-white p-6 rounded-xl shadow-lg mb-8">
+                <div class="text-center">
+                    <h3 class="text-2xl font-bold mb-2">Painel de Controle do Engenheiro</h3>
+                    <div class="flex justify-center items-center space-x-8 text-lg">
+                        <div>🏆 Pontuação: <span id="score" class="font-bold text-action-yellow">0</span></div>
+                        <div>⭐ Nível: <span id="level" class="font-bold text-action-yellow">1</span></div>
+                        <div>⏱️ Tempo: <span id="timer" class="font-bold text-action-yellow">--</span>s</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="gameArea" class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+                <div id="challenge" class="text-center mb-8">
+                    <h4 class="text-xl font-semibold text-burnt-orange mb-4">Desafio Atual</h4>
+                    <p id="challengeText" class="text-lg mb-4">Clique em "Iniciar Missão" para começar!</p>
+                    <div id="challengeImage" class="text-6xl mb-4">🎯</div>
+                </div>
+
+                <div id="materials" class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 hidden">
+                    <button class="material-btn bg-white dark:bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition-all transform hover:scale-105" data-material="cobre">
+                        <div class="text-3xl mb-2">🟫</div>
+                        <div class="font-semibold">Cobre</div>
+                    </button>
+                    <button class="material-btn bg-white dark:bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition-all transform hover:scale-105" data-material="aluminio">
+                        <div class="text-3xl mb-2">⚪</div>
+                        <div class="font-semibold">Alumínio</div>
+                    </button>
+                    <button class="material-btn bg-white dark:bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition-all transform hover:scale-105" data-material="plastico">
+                        <div class="text-3xl mb-2">🔴</div>
+                        <div class="font-semibold">Plástico</div>
+                    </button>
+                    <button class="material-btn bg-white dark:bg-gray-700 p-4 rounded-lg shadow hover:shadow-lg transition-all transform hover:scale-105" data-material="ceramica">
+                        <div class="text-3xl mb-2">🟤</div>
+                        <div class="font-semibold">Cerâmica</div>
+                    </button>
+                </div>
+
+                <div class="text-center">
+                    <button id="startGame" class="bg-action-yellow text-gray-900 px-8 py-3 rounded-lg font-bold hover:bg-yellow-400 transition-all text-lg">
+                        🚀 Iniciar Missão
+                    </button>
+                    <button id="nextChallenge" class="bg-steel-blue text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-600 transition-all text-lg ml-4 hidden">
+                        ➡️ Próximo Desafio
+                    </button>
+                </div>
+
+                <div id="feedback" class="mt-6 p-4 rounded-lg hidden">
+                    <p id="feedbackText" class="text-center font-semibold"></p>
+                </div>
+
+                <!-- Banco de Dados Virtual -->
+                <div class="mt-8 p-4 bg-white dark:bg-gray-700 rounded-lg">
+                    <h4 class="text-lg font-semibold text-burnt-orange mb-4">📚 Banco de Dados de Materiais</h4>
+                    <div class="grid md:grid-cols-2 gap-4 text-sm">
+                        <div>
+                            <strong>Cobre:</strong> Alta condutividade elétrica e térmica, maleável, resistente à corrosão.
+                        </div>
+                        <div>
+                            <strong>Alumínio:</strong> Leve, boa condutividade, resistente à corrosão, fácil usinagem.
+                        </div>
+                        <div>
+                            <strong>Plástico:</strong> Leve, isolante elétrico, baixo custo, moldável.
+                        </div>
+                        <div>
+                            <strong>Cerâmica:</strong> Alta resistência térmica, dura, frágil, isolante elétrico.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experimentos -->
+        <section id="experimentos" class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-steel-blue mb-8 text-center">Experimentos Práticos</h2>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-semibold text-burnt-orange mb-4">🔌 Teste de Condutividade</h3>
+                    <p class="mb-4"><strong>Materiais:</strong> Bateria 9V, LED, fios, diferentes materiais (moedas, plástico, madeira)</p>
+                    <p class="mb-4"><strong>Procedimento:</strong> Conecte o LED à bateria através dos materiais testados.</p>
+                    <div class="bg-red-100 dark:bg-red-900 p-3 rounded text-sm">
+                        ⚠️ <strong>Segurança:</strong> Use apenas baterias de baixa voltagem.
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-semibold text-burnt-orange mb-4">🌡️ Resistência Térmica</h3>
+                    <p class="mb-4"><strong>Materiais:</strong> Água quente, recipientes de diferentes materiais, termômetro</p>
+                    <p class="mb-4"><strong>Procedimento:</strong> Compare como diferentes materiais mantêm a temperatura.</p>
+                    <div class="bg-red-100 dark:bg-red-900 p-3 rounded text-sm">
+                        ⚠️ <strong>Segurança:</strong> Cuidado com água quente. Use luvas de proteção.
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-semibold text-burnt-orange mb-4">🔄 Teste de Elasticidade</h3>
+                    <p class="mb-4"><strong>Materiais:</strong> Elásticos de diferentes tipos, régua, pesos pequenos</p>
+                    <p class="mb-4"><strong>Procedimento:</strong> Meça a deformação de diferentes polímeros sob peso.</p>
+                    <div class="bg-red-100 dark:bg-red-900 p-3 rounded text-sm">
+                        ⚠️ <strong>Segurança:</strong> Cuidado para não deixar elásticos "voarem".
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exercícios e Questionários -->
+        <section id="exercicios" class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-steel-blue mb-8 text-center">Exercícios e Questionários</h2>
+            
+            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+                <div id="quiz">
+                    <div class="quiz-question mb-6">
+                        <h3 class="text-lg font-semibold mb-4">Pergunta <span id="questionNumber">1</span> de 5:</h3>
+                        <p id="questionText" class="text-lg mb-4">Qual material é mais adequado para cabos elétricos devido à sua alta condutividade?</p>
+                        <div id="answers" class="space-y-2">
+                            <button class="answer-btn w-full text-left p-3 bg-white dark:bg-gray-700 rounded-lg hover:bg-steel-blue hover:text-white transition-all" data-answer="a">
+                                A) Plástico
+                            </button>
+                            <button class="answer-btn w-full text-left p-3 bg-white dark:bg-gray-700 rounded-lg hover:bg-steel-blue hover:text-white transition-all" data-answer="b">
+                                B) Cobre
+                            </button>
+                            <button class="answer-btn w-full text-left p-3 bg-white dark:bg-gray-700 rounded-lg hover:bg-steel-blue hover:text-white transition-all" data-answer="c">
+                                C) Cerâmica
+                            </button>
+                            <button class="answer-btn w-full text-left p-3 bg-white dark:bg-gray-700 rounded-lg hover:bg-steel-blue hover:text-white transition-all" data-answer="d">
+                                D) Madeira
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div id="quizFeedback" class="hidden p-4 rounded-lg mt-4">
+                        <p id="quizFeedbackText"></p>
+                        <button id="nextQuestion" class="bg-action-yellow text-gray-900 px-6 py-2 rounded-lg font-bold hover:bg-yellow-400 transition-all mt-4">
+                            Próxima Pergunta
+                        </button>
+                    </div>
+                    
+                    <div id="quizResults" class="hidden text-center">
+                        <h3 class="text-2xl font-bold text-steel-blue mb-4">Resultado Final</h3>
+                        <p class="text-lg mb-4">Você acertou <span id="finalScore"></span> de 5 perguntas!</p>
+                        <button id="restartQuiz" class="bg-steel-blue text-white px-6 py-2 rounded-lg font-bold hover:bg-blue-600 transition-all">
+                            Refazer Quiz
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conexões Interdisciplinares -->
+        <section id="conexoes" class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-steel-blue mb-8 text-center">Conexões Interdisciplinares</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-gradient-to-br from-blue-500 to-blue-700 text-white p-6 rounded-xl shadow-lg">
+                    <div class="text-4xl mb-4">⚗️</div>
+                    <h3 class="text-xl font-semibold mb-2">Física</h3>
+                    <p class="text-sm">Condutividade térmica e elétrica, propriedades mecânicas, estrutura atômica dos materiais.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-green-500 to-green-700 text-white p-6 rounded-xl shadow-lg">
+                    <div class="text-4xl mb-4">⚙️</div>
+                    <h3 class="text-xl font-semibold mb-2">Engenharia</h3>
+                    <p class="text-sm">Design de materiais, seleção para aplicações específicas, otimização de propriedades.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-emerald-500 to-emerald-700 text-white p-6 rounded-xl shadow-lg">
+                    <div class="text-4xl mb-4">🌱</div>
+                    <h3 class="text-xl font-semibold mb-2">Meio Ambiente</h3>
+                    <p class="text-sm">Impacto ambiental, reciclagem, materiais biodegradáveis e sustentabilidade.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-purple-500 to-purple-700 text-white p-6 rounded-xl shadow-lg">
+                    <div class="text-4xl mb-4">💡</div>
+                    <h3 class="text-xl font-semibold mb-2">Tecnologia</h3>
+                    <p class="text-sm">Materiais para inovação, nanotecnologia, impressão 3D e fabricação digital.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Curiosidades -->
+        <section id="curiosidades" class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-steel-blue mb-8 text-center">Curiosidades e Avanços Recentes</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gradient-to-br from-burnt-orange to-orange-600 text-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">🔬 Grafeno - O Material do Futuro</h3>
+                    <p class="mb-4">200 vezes mais resistente que o aço, mais fino que um cabelo humano e excelente condutor de eletricidade.</p>
+                    <ul class="text-sm space-y-1">
+                        <li>• Descoberto em 2004 por Andre Geim e Konstantin Novoselov</li>
+                        <li>• Prêmio Nobel de Física em 2010</li>
+                        <li>• Aplicações em eletrônicos flexíveis e baterias</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gradient-to-br from-dark-green to-green-600 text-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">🌿 Materiais Biodegradáveis</h3>
+                    <p class="mb-4">Plásticos feitos de milho, algas e outros materiais orgânicos que se decompõem naturalmente.</p>
+                    <ul class="text-sm space-y-1">
+                        <li>• PLA (Ácido Polilático) - compostável</li>
+                        <li>• Embalagens de algas marinhas</li>
+                        <li>• Redução do impacto ambiental</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gradient-to-br from-purple-500 to-purple-700 text-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">🧠 Materiais Inteligentes</h3>
+                    <p class="mb-4">Materiais que respondem a estímulos externos como temperatura, luz ou campo magnético.</p>
+                    <ul class="text-sm space-y-1">
+                        <li>• Ligas com memória de forma</li>
+                        <li>• Polímeros eletroativos</li>
+                        <li>• Aplicações em medicina e robótica</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gradient-to-br from-action-yellow to-yellow-500 text-gray-900 p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">🖨️ Impressão 3D Avançada</h3>
+                    <p class="mb-4">Fabricação de materiais compostos e estruturas impossíveis de criar por métodos tradicionais.</p>
+                    <ul class="text-sm space-y-1">
+                        <li>• Impressão com múltiplos materiais</li>
+                        <li>• Estruturas com gradiente de propriedades</li>
+                        <li>• Fabricação de órgãos artificiais</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contato" class="bg-gradient-to-r from-industrial-gray to-steel-blue text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Equipe de Desenvolvimento</h3>
+                    <p class="mb-2">Dr. João Silva - Coordenador</p>
+                    <p class="mb-2">Profa. Maria Santos - Química dos Materiais</p>
+                    <p class="mb-2">Carlos Lima - Desenvolvimento Web</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Referências</h3>
+                    <ul class="text-sm space-y-1">
+                        <li>• Callister, W.D. "Materials Science and Engineering"</li>
+                        <li>• Askeland, D. "The Science and Engineering of Materials"</li>
+                        <li>• Shackelford, J. "Introduction to Materials Science"</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Contato</h3>
+                    <form class="space-y-4">
+                        <input type="text" placeholder="Nome" class="w-full p-3 rounded-lg text-gray-900 text-base">
+                        <input type="email" placeholder="Email" class="w-full p-3 rounded-lg text-gray-900 text-base">
+                        <textarea placeholder="Mensagem" rows="3" class="w-full p-3 rounded-lg text-gray-900 text-base"></textarea>
+                        <button type="submit" class="bg-action-yellow text-gray-900 px-6 py-3 rounded-lg font-bold hover:bg-yellow-400 transition-all">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8 pt-8 border-t border-white/20">
+                <p>&copy; 2024 Engenheiro de Compostos. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Gráfico de Comparação de Materiais
+        const ctx = document.getElementById('materialsChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['Condutividade', 'Resistência', 'Leveza', 'Durabilidade', 'Custo-benefício'],
+                datasets: [{
+                    label: 'Metais',
+                    data: [9, 8, 4, 8, 6],
+                    borderColor: '#4682B4',
+                    backgroundColor: 'rgba(70, 130, 180, 0.2)'
+                }, {
+                    label: 'Cerâmicas',
+                    data: [2, 9, 6, 9, 7],
+                    borderColor: '#CC5500',
+                    backgroundColor: 'rgba(204, 85, 0, 0.2)'
+                }, {
+                    label: 'Polímeros',
+                    data: [2, 4, 9, 5, 8],
+                    borderColor: '#2F4F2F',
+                    backgroundColor: 'rgba(47, 79, 47, 0.2)'
+                }, {
+                    label: 'Compósitos',
+                    data: [6, 8, 7, 8, 5],
+                    borderColor: '#FFD700',
+                    backgroundColor: 'rgba(255, 215, 0, 0.2)'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: document.documentElement.classList.contains('dark') ? '#f3f4f6' : '#374151'
+                        }
+                    }
+                },
+                scales: {
+                    r: {
+                        beginAtZero: true,
+                        max: 10,
+                        ticks: {
+                            color: document.documentElement.classList.contains('dark') ? '#f3f4f6' : '#374151'
+                        },
+                        grid: {
+                            color: document.documentElement.classList.contains('dark') ? '#4b5563' : '#d1d5db'
+                        },
+                        angleLines: {
+                            color: document.documentElement.classList.contains('dark') ? '#4b5563' : '#d1d5db'
+                        },
+                        pointLabels: {
+                            color: document.documentElement.classList.contains('dark') ? '#f3f4f6' : '#374151'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Jogo Interativo
+        let gameData = {
+            score: 0,
+            level: 1,
+            currentChallenge: 0,
+            startTime: 0,
+            challenges: [
+                {
+                    text: "Você precisa criar um cabo elétrico que seja leve e tenha alta condutividade. Qual material escolher?",
+                    image: "⚡",
+                    correct: "cobre",
+                    explanation: "O cobre é o material ideal para cabos elétricos devido à sua excelente condutividade elétrica!"
+                },
+                {
+                    text: "Para fabricar um isolador térmico para fornos industriais, qual material é mais adequado?",
+                    image: "🔥",
+                    correct: "ceramica",
+                    explanation: "A cerâmica é perfeita para isolamento térmico devido à sua alta resistência ao calor!"
+                },
+                {
+                    text: "Precisa de um material leve e flexível para embalagens de alimentos. Qual escolher?",
+                    image: "📦",
+                    correct: "plastico",
+                    explanation: "O plástico é ideal para embalagens por ser leve, flexível e moldável!"
+                },
+                {
+                    text: "Para construir a estrutura de um avião que seja leve mas resistente, qual material usar?",
+                    image: "✈️",
+                    correct: "aluminio",
+                    explanation: "O alumínio combina leveza com resistência, sendo perfeito para aviação!"
+                },
+                {
+                    text: "Desafio Avançado: Para um implante médico que precisa ser biocompatível e condutor, qual escolher?",
+                    image: "🏥",
+                    correct: "cobre",
+                    explanation: "Neste caso específico, o cobre pode ser usado em algumas aplicações médicas especializadas!"
+                }
+            ]
+        };
+
+        function startGame() {
+            gameData.score = 0;
+            gameData.level = 1;
+            gameData.currentChallenge = 0;
+            gameData.startTime = Date.now();
+            
+            document.getElementById('startGame').classList.add('hidden');
+            document.getElementById('materials').classList.remove('hidden');
+            document.getElementById('nextChallenge').classList.add('hidden');
+            document.getElementById('feedback').classList.add('hidden');
+            
+            showChallenge();
+            startTimer();
+        }
+
+        function showChallenge() {
+            const challenge = gameData.challenges[gameData.currentChallenge];
+            document.getElementById('challengeText').textContent = challenge.text;
+            document.getElementById('challengeImage').textContent = challenge.image;
+            
+            // Reset material buttons
+            document.querySelectorAll('.material-btn').forEach(btn => {
+                btn.classList.remove('bg-green-500', 'bg-red-500', 'text-white');
+                btn.classList.add('bg-white', 'dark:bg-gray-700');
+                btn.disabled = false;
+            });
+            
+            document.getElementById('feedback').classList.add('hidden');
+            document.getElementById('nextChallenge').classList.add('hidden');
+        }
+
+        function selectMaterial(material) {
+            const challenge = gameData.challenges[gameData.currentChallenge];
+            const isCorrect = material === challenge.correct;
+            const feedback = document.getElementById('feedback');
+            const feedbackText = document.getElementById('feedbackText');
+            
+            // Disable all buttons
+            document.querySelectorAll('.material-btn').forEach(btn => {
+                btn.disabled = true;
+                if (btn.dataset.material === challenge.correct) {
+                    btn.classList.add('bg-green-500', 'text-white');
+                } else if (btn.dataset.material === material && !isCorrect) {
+                    btn.classList.add('bg-red-500', 'text-white');
+                }
+            });
+            
+            if (isCorrect) {
+                gameData.score += 10;
+                if (Date.now() - gameData.startTime < 10000) {
+                    gameData.score += 5; // Bonus for quick answer
+                }
+                feedback.className = 'mt-6 p-4 rounded-lg bg-green-100 dark:bg-green-800 text-green-800 dark:text-green-100';
+                feedbackText.textContent = `✅ Correto! ${challenge.explanation}`;
+            } else {
+                feedback.className = 'mt-6 p-4 rounded-lg bg-red-100 dark:bg-red-800 text-red-800 dark:text-red-100';
+                feedbackText.textContent = `❌ Incorreto. ${challenge.explanation}`;
+            }
+            
+            feedback.classList.remove('hidden');
+            updateScore();
+            
+            if (gameData.currentChallenge < gameData.challenges.length - 1) {
+                document.getElementById('nextChallenge').classList.remove('hidden');
+            } else {
+                setTimeout(endGame, 2000);
+            }
+        }
+
+        function nextChallenge() {
+            gameData.currentChallenge++;
+            gameData.level = Math.floor(gameData.currentChallenge / 2) + 1;
+            gameData.startTime = Date.now();
+            showChallenge();
+            updateLevel();
+        }
+
+        function endGame() {
+            alert(`🎉 Parabéns! Você concluiu todas as missões!\n\nPontuação Final: ${gameData.score} pontos\nNível Alcançado: ${gameData.level}`);
+            
+            // Reset game
+            document.getElementById('startGame').classList.remove('hidden');
+            document.getElementById('materials').classList.add('hidden');
+            document.getElementById('nextChallenge').classList.add('hidden');
+            document.getElementById('feedback').classList.add('hidden');
+            document.getElementById('challengeText').textContent = "Clique em 'Iniciar Missão' para começar!";
+            document.getElementById('challengeImage').textContent = "🎯";
+            document.getElementById('timer').textContent = "--";
+        }
+
+        function updateScore() {
+            document.getElementById('score').textContent = gameData.score;
+        }
+
+        function updateLevel() {
+            document.getElementById('level').textContent = gameData.level;
+        }
+
+        function startTimer() {
+            const timer = setInterval(() => {
+                const elapsed = Math.floor((Date.now() - gameData.startTime) / 1000);
+                document.getElementById('timer').textContent = elapsed;
+                
+                if (document.getElementById('materials').classList.contains('hidden')) {
+                    clearInterval(timer);
+                }
+            }, 1000);
+        }
+
+        // Event Listeners para o jogo
+        document.getElementById('startGame').addEventListener('click', startGame);
+        document.getElementById('nextChallenge').addEventListener('click', nextChallenge);
+        
+        document.querySelectorAll('.material-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (!btn.disabled) {
+                    selectMaterial(btn.dataset.material);
+                }
+            });
+        });
+
+        // Quiz System
+        let quizData = {
+            currentQuestion: 0,
+            score: 0,
+            questions: [
+                {
+                    question: "Qual material é mais adequado para cabos elétricos devido à sua alta condutividade?",
+                    answers: ["A) Plástico", "B) Cobre", "C) Cerâmica", "D) Madeira"],
+                    correct: "b",
+                    explanation: "O cobre tem excelente condutividade elétrica e é amplamente usado em fios e cabos."
+                },
+                {
+                    question: "Qual característica é mais importante para materiais usados em foguetes?",
+                    answers: ["A) Baixo custo", "B) Alta densidade", "C) Leveza e resistência", "D) Transparência"],
+                    correct: "c",
+                    explanation: "Materiais aeroespaciais precisam ser leves para economizar combustível e resistentes para suportar as condições extremas."
+                },
+                {
+                    question: "Os polímeros são caracterizados principalmente por:",
+                    answers: ["A) Alta condutividade", "B) Cadeias de moléculas longas", "C) Alta densidade", "D) Fragilidade"],
+                    correct: "b",
+                    explanation: "Polímeros são macromoléculas formadas por cadeias longas de unidades repetitivas chamadas monômeros."
+                },
+                {
+                    question: "Qual material é mais adequado para isolamento térmico?",
+                    answers: ["A) Cobre", "B) Alumínio", "C) Cerâmica", "D) Aço"],
+                    correct: "c",
+                    explanation: "Cerâmicas têm baixa condutividade térmica, sendo excelentes isolantes térmicos."
+                },
+                {
+                    question: "Os materiais compósitos são caracterizados por:",
+                    answers: ["A) Serem puros", "B) Combinarem propriedades de diferentes materiais", "C) Serem sempre metálicos", "D) Serem biodegradáveis"],
+                    correct: "b",
+                    explanation: "Compósitos combinam dois ou mais materiais diferentes para obter propriedades superiores."
+                }
+            ]
+        };
+
+        function showQuestion() {
+            const question = quizData.questions[quizData.currentQuestion];
+            document.getElementById('questionNumber').textContent = quizData.currentQuestion + 1;
+            document.getElementById('questionText').textContent = question.question;
+            
+            const answers = document.querySelectorAll('.answer-btn');
+            answers.forEach((btn, index) => {
+                btn.textContent = question.answers[index];
+                btn.dataset.answer = String.fromCharCode(97 + index); // a, b, c, d
+                btn.classList.remove('bg-green-500', 'bg-red-500', 'text-white');
+                btn.classList.add('bg-white', 'dark:bg-gray-700');
+                btn.disabled = false;
+            });
+            
+            document.getElementById('quizFeedback').classList.add('hidden');
+        }
+
+        function selectAnswer(answer) {
+            const question = quizData.questions[quizData.currentQuestion];
+            const isCorrect = answer === question.correct;
+            const feedback = document.getElementById('quizFeedback');
+            const feedbackText = document.getElementById('quizFeedbackText');
+            
+            // Disable all buttons and show correct/incorrect
+            document.querySelectorAll('.answer-btn').forEach(btn => {
+                btn.disabled = true;
+                if (btn.dataset.answer === question.correct) {
+                    btn.classList.add('bg-green-500', 'text-white');
+                } else if (btn.dataset.answer === answer && !isCorrect) {
+                    btn.classList.add('bg-red-500', 'text-white');
+                }
+            });
+            
+            if (isCorrect) {
+                quizData.score++;
+                feedbackText.innerHTML = `<strong>✅ Correto!</strong><br>${question.explanation}`;
+                feedback.className = 'p-4 rounded-lg mt-4 bg-green-100 dark:bg-green-800 text-green-800 dark:text-green-100';
+            } else {
+                feedbackText.innerHTML = `<strong>❌ Incorreto.</strong><br>${question.explanation}`;
+                feedback.className = 'p-4 rounded-lg mt-4 bg-red-100 dark:bg-red-800 text-red-800 dark:text-red-100';
+            }
+            
+            feedback.classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            quizData.currentQuestion++;
+            
+            if (quizData.currentQuestion < quizData.questions.length) {
+                showQuestion();
+            } else {
+                showQuizResults();
+            }
+        }
+
+        function showQuizResults() {
+            document.querySelector('.quiz-question').classList.add('hidden');
+            document.getElementById('quizFeedback').classList.add('hidden');
+            document.getElementById('quizResults').classList.remove('hidden');
+            document.getElementById('finalScore').textContent = quizData.score;
+        }
+
+        function restartQuiz() {
+            quizData.currentQuestion = 0;
+            quizData.score = 0;
+            document.querySelector('.quiz-question').classList.remove('hidden');
+            document.getElementById('quizResults').classList.add('hidden');
+            showQuestion();
+        }
+
+        // Event Listeners para o quiz
+        document.querySelectorAll('.answer-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (!btn.disabled) {
+                    selectAnswer(btn.dataset.answer);
+                }
+            });
+        });
+
+        document.getElementById('nextQuestion').addEventListener('click', nextQuestion);
+        document.getElementById('restartQuiz').addEventListener('click', restartQuiz);
+
+        // Initialize quiz
+        showQuestion();
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Contact form handling
+        document.querySelector('footer form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Mensagem enviada com sucesso! Obrigado pelo contato.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
